@@ -104,24 +104,25 @@
                                     <action selector="sendMessageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U90-c3-Kno"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9MF-YR-Sjz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="593"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HX4-uL-Bn8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="529"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" id="NPf-9I-thL" customClass="MessageTableViewCell" customModule="WS_Chat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" id="jHK-37-OCQ" customClass="MessageTableViewCell" customModule="WS_Chat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NPf-9I-thL" id="PMF-N4-ifP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jHK-37-OCQ" id="gO2-ta-KHq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drw-Dz-D7K">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yp-WF-zqq">
                                                     <rect key="frame" x="8" y="8" width="81.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MessageLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yM-CJ-e3b">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MessageLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-aV-dLf">
                                                     <rect key="frame" x="94.5" y="8" width="272.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -129,53 +130,46 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9yM-CJ-e3b" firstAttribute="leading" secondItem="Drw-Dz-D7K" secondAttribute="trailing" constant="5" id="BON-oE-My7"/>
-                                                <constraint firstItem="Drw-Dz-D7K" firstAttribute="top" secondItem="PMF-N4-ifP" secondAttribute="top" constant="8" id="KxB-hy-xwv"/>
-                                                <constraint firstAttribute="trailing" secondItem="9yM-CJ-e3b" secondAttribute="trailing" constant="8" id="P6R-5y-MUd"/>
-                                                <constraint firstItem="9yM-CJ-e3b" firstAttribute="top" secondItem="PMF-N4-ifP" secondAttribute="top" constant="8" id="nTc-RG-JkG"/>
-                                                <constraint firstAttribute="bottom" secondItem="9yM-CJ-e3b" secondAttribute="bottom" constant="8" id="tjC-z5-9um"/>
-                                                <constraint firstItem="Drw-Dz-D7K" firstAttribute="leading" secondItem="PMF-N4-ifP" secondAttribute="leading" constant="8" id="xA3-Io-poO"/>
+                                                <constraint firstItem="4Yp-WF-zqq" firstAttribute="top" secondItem="gO2-ta-KHq" secondAttribute="top" constant="8" id="4MN-Jl-O9Q"/>
+                                                <constraint firstAttribute="bottom" secondItem="DHj-aV-dLf" secondAttribute="bottom" constant="8" id="9wj-4P-uLx"/>
+                                                <constraint firstItem="4Yp-WF-zqq" firstAttribute="leading" secondItem="gO2-ta-KHq" secondAttribute="leading" constant="8" id="Qgy-pv-CT9"/>
+                                                <constraint firstItem="DHj-aV-dLf" firstAttribute="top" secondItem="gO2-ta-KHq" secondAttribute="top" constant="8" id="QoP-jN-8Ng"/>
+                                                <constraint firstAttribute="trailing" secondItem="DHj-aV-dLf" secondAttribute="trailing" constant="8" id="vob-SC-zT6"/>
+                                                <constraint firstItem="DHj-aV-dLf" firstAttribute="leading" secondItem="4Yp-WF-zqq" secondAttribute="trailing" constant="5" id="yAQ-bj-pa3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="messageLabel" destination="9yM-CJ-e3b" id="JR2-1y-r9t"/>
-                                            <outlet property="userName" destination="Drw-Dz-D7K" id="f77-66-itt"/>
+                                            <outlet property="messageLabel" destination="DHj-aV-dLf" id="EAD-Sm-EfP"/>
+                                            <outlet property="userName" destination="4Yp-WF-zqq" id="zKK-CK-QZO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Yw7-Tc-iZ5"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="F6E-w9-wpD"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vmz-AM-0Yj"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="P5G-PW-LQM"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="A6T-yQ-sRh" firstAttribute="top" secondItem="9MF-YR-Sjz" secondAttribute="bottom" id="7JG-1b-N4L"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A6T-yQ-sRh" secondAttribute="bottom" id="4g3-k4-s7d"/>
                             <constraint firstItem="gJL-S6-hR8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="89s-YR-3ZN"/>
-                            <constraint firstItem="9MF-YR-Sjz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GaG-Vh-obq"/>
                             <constraint firstItem="A6T-yQ-sRh" firstAttribute="leading" secondItem="gJL-S6-hR8" secondAttribute="trailing" id="Ie0-RM-rMk"/>
-                            <constraint firstItem="9MF-YR-Sjz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SEN-IZ-5ov"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gJL-S6-hR8" secondAttribute="bottom" id="W8K-Uy-7eo"/>
                             <constraint firstAttribute="trailing" secondItem="A6T-yQ-sRh" secondAttribute="trailing" id="c8U-ac-T2g"/>
                             <constraint firstItem="A6T-yQ-sRh" firstAttribute="height" secondItem="gJL-S6-hR8" secondAttribute="height" id="l01-aq-rgJ"/>
-                            <constraint firstAttribute="trailing" secondItem="9MF-YR-Sjz" secondAttribute="trailing" id="pba-mX-3bp"/>
-                            <constraint firstItem="gJL-S6-hR8" firstAttribute="top" secondItem="9MF-YR-Sjz" secondAttribute="bottom" id="x3t-SM-NGg"/>
                             <constraint firstItem="gJL-S6-hR8" firstAttribute="top" secondItem="wfy-db-euE" secondAttribute="top" constant="-30" id="y3b-LT-0aw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" leftItemsSupplementBackButton="YES" id="9x1-dg-ZWO">
-                        <connections>
-                            <outlet property="titleView" destination="9MF-YR-Sjz" id="qAK-Fx-513"/>
-                        </connections>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Chat" leftItemsSupplementBackButton="YES" id="9x1-dg-ZWO"/>
                     <connections>
-                        <outlet property="messageTableView" destination="9MF-YR-Sjz" id="hVN-Hc-b0n"/>
+                        <outlet property="messageTableView" destination="HX4-uL-Bn8" id="cyi-Mb-U7J"/>
                         <outlet property="messageTextField" destination="gJL-S6-hR8" id="FS2-Gu-8Rc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="54"/>
+            <point key="canvasLocation" x="160.80000000000001" y="53.523238380809602"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t96-m1-FVv">

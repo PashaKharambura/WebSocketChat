@@ -32,7 +32,7 @@ extension MessagesViewController : WebSocketDelegate {
       let messageAuthor = messageData["author"] as? String,
       let messageText = messageData["text"] as? String {
       
-      messageReceived(messageText, senderName: messageAuthor)
+      messageReceived(messageText, senderName: messageAuthor, callback: messageTableView.reloadData)
     }
   }
   
@@ -58,13 +58,13 @@ extension MessagesViewController {
     socket.write(string: message)
   }
   
-  func messageReceived(_ message: String, senderName: String) {
+  func messageReceived(_ message: String, senderName: String, callback: @escaping ()->()) {
     let newMessage = Message(message: message, messageSender: senderName)
     messageArray.append(newMessage)
     savingMessageHistory(message: newMessage)
     messageTextField.text = nil
     messageTextField.resignFirstResponder()
-    messageTableView.reloadData()
+    callback()
     if messageArray.count > 0 {
       messageTableView.scrollToRow(at: IndexPath(item:messageArray.count-1, section: 0), at: .bottom, animated: true)
     }

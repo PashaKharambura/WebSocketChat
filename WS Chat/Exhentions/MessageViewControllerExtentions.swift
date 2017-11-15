@@ -13,7 +13,6 @@ import UIKit
 
 extension MessagesViewController: UITextFieldDelegate {
   
-  
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource

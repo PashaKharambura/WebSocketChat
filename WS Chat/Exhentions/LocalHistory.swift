@@ -21,12 +21,13 @@ extension MessagesViewController {
     (UIApplication.shared.delegate as! AppDelegate).saveContext()
   }
   
-  func gettingMessages() {
+  func gettingMessages(callback: @escaping ()->()) {
     do {
       let array: [SavedMessage] = try context.fetch(SavedMessage.fetchRequest())
       for i in 0..<array.count {
         let newMessage = Message(message: array[i].message!, messageSender: array[i].messageSender!)
         messageArray.append(newMessage)
+        callback()
       }
     }
     catch {
