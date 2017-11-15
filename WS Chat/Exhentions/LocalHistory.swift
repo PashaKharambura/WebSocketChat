@@ -28,10 +28,12 @@ extension MessagesViewController {
         let newMessage = Message(message: array[i].message!, messageSender: array[i].messageSender!)
         messageArray.append(newMessage)
         callback()
+        scrollToLastRow()
       }
     }
     catch {
       print("Fetching Failed")
+      AlertDialog.showAlert("Fetching Failed", message: "Problem with loading history", viewController: self)
     }
   }
   

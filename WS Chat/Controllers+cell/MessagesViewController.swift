@@ -29,7 +29,6 @@ final class MessagesViewController: UIViewController {
       NotificationCenter.default.addObserver(self, selector: #selector(MessagesViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
       socket.delegate = self
-      
       socket.connect()
       gettingMessages(callback: messageTableView.reloadData)
       navigationItem.hidesBackButton = false

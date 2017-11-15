@@ -65,8 +65,8 @@ extension MessagesViewController {
     messageTextField.text = nil
     messageTextField.resignFirstResponder()
     callback()
-    if messageArray.count > 0 {
-      messageTableView.scrollToRow(at: IndexPath(item:messageArray.count-1, section: 0), at: .bottom, animated: true)
-    }
+    scrollToLastRow()
   }
+
+  
 }

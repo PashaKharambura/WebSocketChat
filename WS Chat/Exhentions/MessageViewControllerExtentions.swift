@@ -12,6 +12,7 @@ import UIKit
 // MARK - UITextFieldDelegate
 
 extension MessagesViewController: UITextFieldDelegate {
+
   
 }
 
@@ -32,6 +33,13 @@ extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
     
     return cell
   }
+    
+  func scrollToLastRow() {
+    if messageArray.count > 0 {
+      messageTableView.scrollToRow(at: IndexPath(item:messageArray.count-1, section: 0), at: .bottom, animated: true)
+    }
+  }
+  
 }
 
 
