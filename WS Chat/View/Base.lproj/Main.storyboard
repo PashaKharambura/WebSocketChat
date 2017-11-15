@@ -49,7 +49,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Log in" leftItemsSupplementBackButton="YES" id="m9z-Sw-iKt">
+                    <navigationItem key="navigationItem" title="Log in" id="m9z-Sw-iKt">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="fiZ-tF-Zej">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" identifier="usernameSelected" id="Mit-w5-t5h"/>
@@ -59,7 +59,6 @@
                             <outlet property="rightBarButtonItem" destination="fiZ-tF-Zej" id="Unc-SX-PEg"/>
                         </connections>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="nextButtonItem" destination="fiZ-tF-Zej" id="F0F-fM-YBO"/>
                     </connections>
@@ -81,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HX4-uL-Bn8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="529"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" id="jHK-37-OCQ" customClass="MessageTableViewCell" customModule="WS_Chat" customModuleProvider="target">
@@ -125,7 +124,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6T-yQ-sRh">
-                                <rect key="frame" x="315" y="593" width="60" height="30"/>
+                                <rect key="frame" x="315" y="637" width="60" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="1U3-5t-wnT"/>
@@ -139,7 +138,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="EnterText" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJL-S6-hR8">
-                                <rect key="frame" x="0.0" y="593" width="315" height="30"/>
+                                <rect key="frame" x="0.0" y="637" width="315" height="30"/>
                                 <color key="backgroundColor" red="0.85538947430000001" green="0.85538947430000001" blue="0.85538947430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

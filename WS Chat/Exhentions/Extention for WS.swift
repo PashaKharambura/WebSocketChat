@@ -40,6 +40,12 @@ extension MessagesViewController : WebSocketDelegate {
     
   }
   
+  func websocketDidWriteError(error: NSError?) {
+    if let error = error {
+      print("wez got an error from the websocket: \(error.localizedDescription)")
+    }
+  }
+  
   public func websocketDidDisconnect(_ socket: Starscream.WebSocket, error: NSError?) {
     if let error = error {
       print("websocket is disconnected by error: \(error.localizedDescription)")

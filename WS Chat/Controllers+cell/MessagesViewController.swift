@@ -45,7 +45,8 @@ final class MessagesViewController: UIViewController {
         sendMessage(messageTextField.text!)
       }
     }
-
+ 
+    
   // MARK: - Keyboard appearence
   
     func keyboardWillShow(notification: NSNotification) {
