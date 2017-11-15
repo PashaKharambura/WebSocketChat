@@ -12,7 +12,7 @@ import Starscream
 final class MessagesViewController: UIViewController {
 
   // MARK: - Properties
-    var username = String()
+    var username = ""
     var messageArray = [Message]()
     var socket = WebSocket(url: URL(string: "ws://localhost:1337/")!, protocols: ["chat"])
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
