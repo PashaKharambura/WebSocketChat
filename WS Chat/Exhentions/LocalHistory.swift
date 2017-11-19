@@ -26,9 +26,9 @@ extension MessagesViewController {
       let array: [SavedMessage] = try context.fetch(SavedMessage.fetchRequest())
       for i in 0..<array.count {
         let newMessage = Message(message: array[i].message!, messageSender: array[i].messageSender!)
-        messageArray.append(newMessage)
+        MessageModel.instanse.addMessage(message: newMessage)
         callback()
-        scrollToLastRow()
+        MessageModel.instanse.scrollToLastRow(tableView: messageTableView)
       }
     }
     catch {

@@ -119,8 +119,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vmz-AM-0Yj"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="P5G-PW-LQM"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hZq-GZ-x9o"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="n27-aI-PEp"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6T-yQ-sRh">

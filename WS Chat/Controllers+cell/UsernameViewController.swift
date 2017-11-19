@@ -17,14 +17,12 @@ final class UsernameViewController: UIViewController {
   // MARK: - Navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "usernameSelected" {
-      let viewController = segue.destination as! MessagesViewController
-      viewController.username = username
+      let _ = segue.destination as! MessagesViewController
+      MessageModel.instanse.setUser(userName: username)
     }
   }
-}
 
 // MARK: - IBActions
-extension UsernameViewController {
 
   @IBAction func usernameDidChange(textField: UITextField) {
     if let text = textField.text {
@@ -39,4 +37,5 @@ extension UsernameViewController {
     username = ""
     nextButtonItem.isEnabled = false
   }
+  
 }

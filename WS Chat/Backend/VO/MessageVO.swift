@@ -17,6 +17,7 @@ struct Message {
     self.message = message.withoutWhitespace()
     self.messageSender = messageSender
   }
+  
 }
 
 

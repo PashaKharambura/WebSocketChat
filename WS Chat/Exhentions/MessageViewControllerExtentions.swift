@@ -20,16 +20,16 @@ extension MessagesViewController: UITextFieldDelegate {
 extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return messageArray.count
+    return MessageModel.instanse.messagesArray.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = messageTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
     let index = indexPath.row
-    cell.messageLabel.text = messageArray[index].message
-    cell.userName.text = ("\(messageArray[index].messageSender):")
+    cell.messageLabel.text = MessageModel.instanse.messagesArray[index].message
+    cell.userName.text = ("\(MessageModel.instanse.messagesArray[index].messageSender):")
     
-    if "\(username)" == "\(messageArray[index].messageSender)" {
+    if "\(MessageModel.instanse.currentUser)" == "\(MessageModel.instanse.messagesArray[index].messageSender)" {
       cell.backgroundColor = UIColor.blue
     } else {
       cell.backgroundColor = UIColor.gray
@@ -38,19 +38,4 @@ extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
     return cell
   }
   
-  func scrollToLastRow() {
-    if messageArray.count > 0 {
-      messageTableView.scrollToRow(at: IndexPath(item:messageArray.count-1, section: 0), at: .bottom, animated: true)
-    }
-  }
-  
 }
-
-
-
-
-
-
-
-
-

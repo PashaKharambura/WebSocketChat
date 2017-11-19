@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2945FB811FBB886F002B62BB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945FB801FBB886F002B62BB /* Message.swift */; };
+		290CA50A1FC1D42F0085ACDD /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290CA5091FC1D42F0085ACDD /* WebSocket.swift */; };
+		290CA50D1FC1D8580085ACDD /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290CA50C1FC1D8580085ACDD /* MessageModel.swift */; };
+		2945FB811FBB886F002B62BB /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945FB801FBB886F002B62BB /* MessageVO.swift */; };
 		2945FB841FBB8F49002B62BB /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945FB831FBB8F49002B62BB /* MessageTableViewCell.swift */; };
-		2995BF221FBBBE9C002BA827 /* Extention for WS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995BF211FBBBE9C002BA827 /* Extention for WS.swift */; };
 		2995BF241FBBBEEB002BA827 /* LocalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995BF231FBBBEEB002BA827 /* LocalHistory.swift */; };
 		29EC28C41FBBB976009A54A2 /* WS Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29EC28C21FBBB976009A54A2 /* WS Chat.xcdatamodeld */; };
 		29EC28C71FBBBACB009A54A2 /* MessageViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC28C61FBBBACB009A54A2 /* MessageViewControllerExtentions.swift */; };
@@ -26,9 +27,10 @@
 
 /* Begin PBXFileReference section */
 		07C7F9EA0ED7A9A8CC801146 /* Pods-WS Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WS Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WS Chat/Pods-WS Chat.release.xcconfig"; sourceTree = "<group>"; };
-		2945FB801FBB886F002B62BB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		290CA5091FC1D42F0085ACDD /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		290CA50C1FC1D8580085ACDD /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		2945FB801FBB886F002B62BB /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
 		2945FB831FBB8F49002B62BB /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
-		2995BF211FBBBE9C002BA827 /* Extention for WS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention for WS.swift"; sourceTree = "<group>"; };
 		2995BF231FBBBEEB002BA827 /* LocalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalHistory.swift; sourceTree = "<group>"; };
 		29EC28C31FBBB976009A54A2 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		29EC28C61FBBBACB009A54A2 /* MessageViewControllerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewControllerExtentions.swift; sourceTree = "<group>"; };
@@ -67,6 +69,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		290CA5081FC1D4060085ACDD /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				290CA50B1FC1D83A0085ACDD /* VO */,
+				290CA5091FC1D42F0085ACDD /* WebSocket.swift */,
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
+		290CA50B1FC1D83A0085ACDD /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				2945FB801FBB886F002B62BB /* MessageVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
 		2945FB7C1FBB82D1002B62BB /* Controllers+cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +99,7 @@
 		2945FB7F1FBB8861002B62BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2945FB801FBB886F002B62BB /* Message.swift */,
+				290CA50C1FC1D8580085ACDD /* MessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				29EC28C61FBBBACB009A54A2 /* MessageViewControllerExtentions.swift */,
-				2995BF211FBBBE9C002BA827 /* Extention for WS.swift */,
 				2995BF231FBBBEEB002BA827 /* LocalHistory.swift */,
 			);
 			path = Exhentions;
@@ -152,6 +170,7 @@
 				29EC28C51FBBBAAF009A54A2 /* Exhentions */,
 				2945FB7F1FBB8861002B62BB /* Model */,
 				2945FB7C1FBB82D1002B62BB /* Controllers+cell */,
+				290CA5081FC1D4060085ACDD /* Backend */,
 				2945FB821FBB896A002B62BB /* View */,
 			);
 			path = "WS Chat";
@@ -281,9 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2995BF221FBBBE9C002BA827 /* Extention for WS.swift in Sources */,
+				290CA50A1FC1D42F0085ACDD /* WebSocket.swift in Sources */,
 				938C24FC1D7395E8008DAAF0 /* MessagesViewController.swift in Sources */,
-				2945FB811FBB886F002B62BB /* Message.swift in Sources */,
+				2945FB811FBB886F002B62BB /* MessageVO.swift in Sources */,
 				29EC28C71FBBBACB009A54A2 /* MessageViewControllerExtentions.swift in Sources */,
 				29EC28C41FBBB976009A54A2 /* WS Chat.xcdatamodeld in Sources */,
 				934813211D74FFC900E32BE4 /* UsernameViewController.swift in Sources */,
@@ -292,6 +311,7 @@
 				2995BF241FBBBEEB002BA827 /* LocalHistory.swift in Sources */,
 				29F8498F1FBBDE33008FD2D1 /* Alert Message.swift in Sources */,
 				938C24FA1D7395E8008DAAF0 /* AppDelegate.swift in Sources */,
+				290CA50D1FC1D8580085ACDD /* MessageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

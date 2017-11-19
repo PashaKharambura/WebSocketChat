@@ -12,10 +12,9 @@ import Starscream
 final class MessagesViewController: UIViewController {
 
   // MARK: - Properties
-    var username = ""
-    var messageArray = [Message]()
-    var socket = WebSocket(url: URL(string: "ws://localhost:1337/")!, protocols: ["chat"])
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    let context   = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let mySocket  = WebSocketServise()
   
   // MARK: - IBOutlets
 
@@ -25,27 +24,33 @@ final class MessagesViewController: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
 
-      NotificationCenter.default.addObserver(self, selector: #selector(MessagesViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-      NotificationCenter.default.addObserver(self, selector: #selector(MessagesViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(self.mainMessageFunction), name: NSNotification.Name(rawValue: "updateNotification"), object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
-      socket.delegate = self
-      socket.connect()
+      mySocket.connecting()
       gettingMessages(callback: messageTableView.reloadData)
       navigationItem.hidesBackButton = false
+
+    }
+  
+    func mainMessageFunction(notif: NSNotification) {
+      messageTableView.reloadData()
+      savingMessageHistory(message: MessageModel.instanse.messagesArray.last!)
+      MessageModel.instanse.scrollToLastRow(tableView: messageTableView)
     }
   
     deinit {
-      socket.disconnect(forceTimeout: 0)
-      socket.delegate = nil
+      mySocket.disconecting()
     }
   
-// MARK: - IBActions
+  // MARK: - IBActions
+  
     @IBAction func sendMessageButton(_ sender: UIButton) {
       if messageTextField.text != "" {
-        sendMessage(messageTextField.text!)
+        mySocket.sendMessage(messageTextField.text!)
       }
     }
- 
     
   // MARK: - Keyboard appearence
   
@@ -66,6 +71,3 @@ final class MessagesViewController: UIViewController {
     }
 
 }
-
-
-
