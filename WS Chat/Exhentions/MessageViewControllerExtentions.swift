@@ -9,12 +9,6 @@
 import Foundation
 import UIKit
 
-// MARK - UITextFieldDelegate
-
-extension MessagesViewController: UITextFieldDelegate {
-  
-}
-
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -36,6 +30,12 @@ extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     return cell
+  }
+  
+  func scrollToLastRow() {
+    if MessageModel.instanse.messagesArray.count > 0 {
+      messageTableView.scrollToRow(at: IndexPath(item:MessageModel.instanse.messagesArray.count-1, section: 0), at: .bottom, animated: true)
+    }
   }
   
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Starscream
 
-final class MessagesViewController: UIViewController {
+final class MessagesViewController: UIViewController, UITextFieldDelegate {
 
   // MARK: - Properties
 
@@ -34,12 +34,6 @@ final class MessagesViewController: UIViewController {
 
     }
   
-    func mainMessageFunction(notif: NSNotification) {
-      messageTableView.reloadData()
-      savingMessageHistory(message: MessageModel.instanse.messagesArray.last!)
-      MessageModel.instanse.scrollToLastRow(tableView: messageTableView)
-    }
-  
     deinit {
       mySocket.disconecting()
     }
@@ -52,7 +46,7 @@ final class MessagesViewController: UIViewController {
       }
     }
     
-  // MARK: - Keyboard appearence
+  // MARK: - Notifications
   
     func keyboardWillShow(notification: NSNotification) {
       if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -70,4 +64,11 @@ final class MessagesViewController: UIViewController {
       }
     }
 
+    func mainMessageFunction(notif: NSNotification) {
+      messageTableView.reloadData()
+      messageTextField.text = ""
+      messageTextField.resignFirstResponder()
+      savingMessageHistory(message: MessageModel.instanse.messagesArray.last!)
+      scrollToLastRow()
+    }
 }

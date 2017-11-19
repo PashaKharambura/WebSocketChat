@@ -10,11 +10,16 @@ import UIKit
 
 final class UsernameViewController: UIViewController {
 
+  // MARK: - Properties
+
   var username = String()
+  
+  // MARK: - IBOutlets
   
   @IBOutlet var nextButtonItem: UIBarButtonItem!
 
   // MARK: - Navigation
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "usernameSelected" {
       let _ = segue.destination as! MessagesViewController
@@ -22,7 +27,7 @@ final class UsernameViewController: UIViewController {
     }
   }
 
-// MARK: - IBActions
+  // MARK: - IBActions
 
   @IBAction func usernameDidChange(textField: UITextField) {
     if let text = textField.text {
@@ -31,11 +36,6 @@ final class UsernameViewController: UIViewController {
     } else {
       nextButtonItem.isEnabled = false
     }    
-  }
-
-  @IBAction func websocketDisconnectedUnwind(unwindSegue: UIStoryboardSegue) {
-    username = ""
-    nextButtonItem.isEnabled = false
   }
   
 }

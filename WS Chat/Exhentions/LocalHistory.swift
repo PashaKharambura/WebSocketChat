@@ -28,7 +28,7 @@ extension MessagesViewController {
         let newMessage = Message(message: array[i].message!, messageSender: array[i].messageSender!)
         MessageModel.instanse.addMessage(message: newMessage)
         callback()
-        MessageModel.instanse.scrollToLastRow(tableView: messageTableView)
+        scrollToLastRow()
       }
     }
     catch {
