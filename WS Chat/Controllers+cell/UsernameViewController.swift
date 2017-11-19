@@ -22,7 +22,6 @@ final class UsernameViewController: UIViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "usernameSelected" {
-      let _ = segue.destination as! MessagesViewController
       MessageModel.instanse.setUser(userName: username)
     }
   }

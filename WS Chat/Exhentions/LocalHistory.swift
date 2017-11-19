@@ -21,15 +21,15 @@ extension MessagesViewController {
     (UIApplication.shared.delegate as! AppDelegate).saveContext()
   }
   
-  func gettingMessages(callback: @escaping ()->()) {
+  func gettingMessages() {
     do {
       let array: [SavedMessage] = try context.fetch(SavedMessage.fetchRequest())
       for i in 0..<array.count {
         let newMessage = Message(message: array[i].message!, messageSender: array[i].messageSender!)
         MessageModel.instanse.addMessage(message: newMessage)
-        callback()
-        scrollToLastRow()
       }
+      messageTableView.reloadData()
+      scrollToLastRow()
     }
     catch {
       print("Fetching Failed")
