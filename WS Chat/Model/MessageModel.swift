@@ -12,6 +12,7 @@ import Starscream
 class MessageModel {
   
   static var instanse = MessageModel()
+  let mySocket  = WebSocketServise()
   private (set) var currentUser   = String()
   private (set) var messagesArray = [Message]() {
     didSet {
@@ -26,5 +27,17 @@ class MessageModel {
   func setUser(userName: String) {
     currentUser = userName
   }
+  
+  func connecting() {
+    mySocket.connecting()
+  }
+  
+  func disconnecting() {
+    mySocket.disconecting()
+  }
 
+  func sendingMessage(mess:String) {
+    mySocket.sendMessage(mess)
+  }
+  
 }

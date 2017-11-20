@@ -14,7 +14,6 @@ final class MessagesViewController: UIViewController, UITextFieldDelegate {
   // MARK: - Properties
 
     let context   = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let mySocket  = WebSocketServise()
   
   // MARK: - IBOutlets
 
@@ -28,21 +27,21 @@ final class MessagesViewController: UIViewController, UITextFieldDelegate {
       NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
-      mySocket.connecting()
+      MessageModel.instanse.connecting()
       gettingMessages()
       navigationItem.hidesBackButton = false
       
     }
   
     deinit {
-      mySocket.disconecting()
+      MessageModel.instanse.disconnecting()
     }
   
   // MARK: - IBActions
   
     @IBAction func sendMessageButton(_ sender: UIButton) {
       if messageTextField.text != "" {
-        mySocket.sendMessage(messageTextField.text!)
+        MessageModel.instanse.sendingMessage(mess: messageTextField.text!)
       }
     }
     
